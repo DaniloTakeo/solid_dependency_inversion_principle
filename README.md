@@ -13,6 +13,9 @@ Cada caso de estudo é organizado da seguinte forma:
 ├── case2
 │   ├── problem   # Código que viola o DIP
 │   ├── solution  # Código refatorado aplicando o DIP
+├── case3
+│   ├── problem   # Código que viola o DIP
+│   ├── solution  # Código refatorado aplicando o DIP
 ```
 
 ---
@@ -38,6 +41,18 @@ A classe `NotificationService` depende diretamente da implementação `EmailNoti
 Criamos a interface `Notifier` para permitir múltiplas implementações e aplicamos o **Strategy Pattern**.
 
 ✅ **Benefícios**: Código flexível, extensível e pronto para suportar múltiplos canais de notificação sem modificar `NotificationService`.
+
+---
+
+## 📌 Case 3 - Processamento de Pagamentos
+
+### **Problema** (Violação do DIP)
+A classe `PaymentProcessor` depende diretamente da implementação concreta `CreditCardPayment`, dificultando a adição de novos métodos de pagamento como boleto, PayPal ou Pix.
+
+### **Solução** (Aplicação do DIP e Strategy Pattern)
+Criamos a interface `PaymentMethod`, implementada por várias classes como `CreditCardPayment`, `BoletoPayment` e `PayPalPayment`. A classe `PaymentProcessor` passa a depender da abstração, e não de uma implementação específica.
+
+✅ **Benefícios**: Facilita a expansão do sistema de pagamentos, reduz acoplamento e melhora a testabilidade do código.
 
 ---
 
