@@ -2,6 +2,17 @@
 
 Este repositório contém estudos sobre o **Princípio da Inversão de Dependência (DIP)** utilizando Java. Os exemplos demonstram cenários que violam o princípio e como podemos refatorá-los para seguir as boas práticas da programação orientada a objetos.
 
+## O que é o DIP?
+
+O **Princípio da Inversão de Dependência (Dependency Inversion Principle)** é o quinto princípio do SOLID e estabelece que:
+
+> **“Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.”**
+> 
+> **“Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações.”**
+
+Na prática, o DIP nos ajuda a desacoplar o código, permitindo que classes principais (de alto nível) não estejam diretamente vinculadas a implementações específicas (de baixo nível), mas sim a interfaces ou abstrações. Isso facilita a **manutenção**, **testabilidade** e **extensibilidade** do sistema.
+
+
 ## Estrutura do Repositório
 
 Cada caso de estudo é organizado da seguinte forma:
