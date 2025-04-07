@@ -27,6 +27,9 @@ Cada caso de estudo é organizado da seguinte forma:
 ├── case3
 │   ├── problem   # Código que viola o DIP
 │   ├── solution  # Código refatorado aplicando o DIP
+├── case4
+│   ├── problem   # Código que viola o DIP
+│   ├── solution  # Código refatorado aplicando o DIP
 ```
 
 ---
@@ -64,6 +67,18 @@ A classe `PaymentProcessor` depende diretamente da implementação concreta `Cre
 Criamos a interface `PaymentMethod`, implementada por várias classes como `CreditCardPayment`, `BoletoPayment` e `PayPalPayment`. A classe `PaymentProcessor` passa a depender da abstração, e não de uma implementação específica.
 
 ✅ **Benefícios**: Facilita a expansão do sistema de pagamentos, reduz acoplamento e melhora a testabilidade do código.
+
+---
+
+## 📌 Case 4 - Geração de Relatórios
+
+### **Problema** (Violação do DIP)
+A classe `ReportGenerator` depende diretamente da implementação concreta `PDFExporter`, tornando difícil a geração de relatórios em outros formatos (Excel, HTML, etc).
+
+### **Solução** (Aplicação do DIP)
+Criamos uma interface `ReportExporter` e implementações como `PDFExporter` e `ExcelExporter`, desacoplando a classe de alto nível das implementações concretas.
+
+✅ **Benefícios**: Adição de novos formatos de exportação sem alterar `ReportGenerator` e maior flexibilidade para testes.
 
 ---
 
